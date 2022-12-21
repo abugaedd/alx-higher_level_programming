@@ -43,3 +43,17 @@ class Square:
         return (self.__size ** 2)
 
     @property
+    def size(self):
+        """Getter of the private attribute"""
+        return (self.__size)
+
+    @size.setter
+    def size(self, value):
+        """Setter for the size private attribute"""
+        if ((type(value) is int) or (type(value) is float)):
+            if (value < 0):
+                raise (ValueError("size must be >= 0"))
+            else:
+                self.__size = value
+        else:
+            raise (TypeError("size must be a number"))
